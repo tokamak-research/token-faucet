@@ -1,0 +1,6 @@
+{
+    "name": "Solana for development",
+    "symbol": "mockSOL",
+    "description": "Used in Tokamak Aggregator testnet and devnet, for development purpose only, not real SOL.",
+    "image": "https://cdn.jsdelivr.net/gh/tokamak-research/token-faucet@master/tests/lib/metadata/sol.png"
+}

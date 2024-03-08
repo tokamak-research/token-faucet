@@ -5,14 +5,21 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-token_faucet = "Ceu7xwhh4URJ9pFEyLSWhaQWXpbk92PhUzWsw1C8GsKZ"
+token_faucet = "CVRkkVzuwXikYjz1FqgXLt2t3JjBB3L5k6rV5FVrfkRY"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
-wallet = "/Users/ken/.config/solana/id.json"
+cluster = "localnet"
+wallet = "~/.config/solana/id.json" 
 
 [scripts]
-test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/test.ts"
+
+[test]
+startup_wait = 10000
+
+[[test.genesis]]
+address = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+program = "./onchain-program/token-metadata.so"

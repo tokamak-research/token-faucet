@@ -1,0 +1,1 @@
+solana-test-validator -r --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s  '/Users/ming/Documents/GitHub/token-faucet/onchain-program/token-metadata.so'
