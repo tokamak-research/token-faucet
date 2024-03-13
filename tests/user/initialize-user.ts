@@ -16,7 +16,7 @@ it("Create user account", async () => {
         program.programId
     );
     let hexString = createHash('sha256').update(Buffer.concat([user.publicKey.toBytes(), mintPDA.toBytes()])).digest('hex');
-    let seed = Uint8Array.from(Buffer.from(hexString,'hex'));
+    let seed = Uint8Array.from(Buffer.from(hexString, 'hex'));
 
     const [mintRecordPDA] = PublicKey.findProgramAddressSync(
         [seed],
@@ -31,6 +31,6 @@ it("Create user account", async () => {
         }).instruction(),
     ];
 
-    const tx = await provider.connection.sendTransaction(await v0_pack(instructions, user), {skipPreflight: true});
+    const tx = await provider.connection.sendTransaction(await v0_pack(instructions, user), { skipPreflight: true });
     logger(tx);
 });

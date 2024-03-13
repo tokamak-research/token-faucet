@@ -36,6 +36,16 @@ pub mod token_faucet {
         instructions::token_mint(ctx, token_symbol, amount)
     }
 
+    pub fn edit_config(
+        ctx: Context<EditConfig>,
+        token_symbol: String,
+        new_authority: Option<Pubkey>,
+        max_amount: Option<u64>,
+        refresh_interval: Option<u64>,
+    ) -> Result<()> {
+        instructions::edit_config(ctx, token_symbol, new_authority, max_amount, refresh_interval)
+    }
+
     pub fn user_close(ctx: Context<UserClose>) -> Result<()> {
         instructions::user_close(ctx)
     }

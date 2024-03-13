@@ -4,4 +4,5 @@ describe("Token Faucet", () => {
   require("./user/mint");
   require("./token/token-limiter");
   require("./user/close-user");
+  require("./token/edit-config");
 });

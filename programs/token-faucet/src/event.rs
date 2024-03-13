@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 #[event]
 pub struct TokenConfigEvent {
     pub signer: Pubkey,
-    pub mint_account: Pubkey,
+    pub authority: Pubkey,
     pub max_amount: u64,
     pub refresh_interval: u64,
 }
