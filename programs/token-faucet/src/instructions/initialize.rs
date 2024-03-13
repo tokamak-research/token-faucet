@@ -96,12 +96,13 @@ pub fn token_initialize(
     )?;
 
     let mut limiter = ctx.accounts.token_limiter.load_init()?;
+    limiter.authority = ctx.accounts.admin.key();
     limiter.max_amount = max_amount;
     limiter.refresh_interval = refresh_interval;
 
     emit!(TokenConfigEvent {
         signer: ctx.accounts.admin.key(),
-        mint_account: ctx.accounts.mint_account.key(),
+        authority: ctx.accounts.admin.key(),
         max_amount,
         refresh_interval,
     });

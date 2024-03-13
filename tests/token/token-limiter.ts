@@ -107,7 +107,7 @@ describe("Token Limiter", () => {
 
         const tx1 = await provider.connection.sendTransaction(await v0_pack(instructions, user), { skipPreflight: true });
         logger(tx1);
-        
+
         await confirmTransaction(tx1);
 
         try {
@@ -115,7 +115,7 @@ describe("Token Limiter", () => {
         }
         catch (error) {
             expect(error.message).to.equal("failed to get token account balance: Invalid param: could not find account");
-        } 
+        }
     });
 
     it("Mint tokens on limit then wait for refresh", async () => {
@@ -166,7 +166,7 @@ describe("Token Limiter", () => {
         const refresh_blockheight = (await provider.connection.getLatestBlockhash()).lastValidBlockHeight + 5;
         const tx1 = await provider.connection.sendTransaction(await v0_pack(instructions1, user), { skipPreflight: true });
         logger(tx1);
-        
+
         await confirmTransaction(tx1);
 
         const userbalance1 = await provider.connection.getTokenAccountBalance(mockSOLATA);
@@ -186,7 +186,7 @@ describe("Token Limiter", () => {
 
         const tx2 = await provider.connection.sendTransaction(await v0_pack(instructions2, user), { skipPreflight: true });
         logger(tx2);
-        
+
         await confirmTransaction(tx2);
 
         const userbalance2 = await provider.connection.getTokenAccountBalance(mockSOLATA);

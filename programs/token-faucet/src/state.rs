@@ -2,6 +2,7 @@ use anchor_lang::prelude::*;
 
 #[account(zero_copy)]
 pub struct TokenLimiter {
+    pub authority: Pubkey,
     pub max_amount: u64,
     pub refresh_interval: u64, // in slot (1 slot = 400ms)
 }
