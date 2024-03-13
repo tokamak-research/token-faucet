@@ -1,0 +1,6 @@
+{
+    "name": "USD Coin for development",
+    "symbol": "mockUSDC",
+    "description": "Used in Tokamak Aggregator testnet and devnet, for development purpose only, not real USDC.",
+    "image": "https://cdn.jsdelivr.net/gh/tokamak-research/token-faucet@master/tests/lib/metadata/usdc.png"
+}
